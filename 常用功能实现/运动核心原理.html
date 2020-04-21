@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>运动核心原理</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        div {
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div></div>
+    <script>
+        var input = document.getElementsByTagName('input')[0];
+        var div = document.getElementsByTagName('div')[0];
+        var timer = null;
+
+        function move(obj, target, time) {
+            var start = obj.offsetLeft;
+
+            var dis = target - start;
+
+            var count = Math.round(time / 30);
+            var n = 0;
+
+            clearInterval(timer);
+            timer = setInterval(function () {
+                n++;
+                obj.style.left = start + dis * n / count + 'px';
+                if (n == count) {
+                    clearInterval(timer);
+                }
+            }, 30);
+        }
+        move(div, 950, 1000);
+    </script>
+</body>
+
+</html>

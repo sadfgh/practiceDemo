@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片轮播</title>
+    <style type="text/css">
+        img{
+            width: 550px;
+            height: 220px;
+        }
+        .right{
+            position: absolute;
+            top:90px;
+            left: 500px;
+            color: aliceblue;
+            width: 30px;
+            height: 50px;
+            border-radius: 50%;
+            line-height: 50px;
+            padding-left: 20px;
+            font-weight: 700;
+            font-size: 18px;
+            background-color:rgba(255,255,255,0.5);
+        }
+        .left{
+            position: absolute;
+            top: 90px;
+            left: 20px;
+            color: aliceblue;
+            width: 30px;
+            height: 50px;
+            border-radius: 50%;
+            line-height: 50px;
+            padding-left: 20px;
+            font-weight: 700;
+            font-size: 18px;
+            background-color:rgba(255,255,225,0.5);
+        }
+
+        ul{
+            width: 120px;
+            height: 30px;
+            line-height: 30px;
+            position: absolute;
+            top: 185px;
+            left: 230px;
+            float: left;
+            color: aliceblue;
+        }
+        li{
+            float: left;
+            width: 20px;
+            height: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <img src="0.jpg" onmouseover="stop()" onmouseout="start()">
+     
+        <span class="right">></span>
+  
+        <span class="left" onclick="left()"><</span>
+    
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+   
+
+    <script>
+        
+        onload=init;
+        var i=0;
+        var timer;
+         
+        function init(){
+            timer = setInterval("fn()",1000);
+           
+        }
+        
+       
+        function fn(){
+            i++;
+            if(i>5){
+                i=0;
+            }
+            var imgs = document.getElementsByTagName('img')[0];
+            imgs.src = i+".jpg";
+            
+        }
+         function stop(){
+            clearInterval(timer);
+       }
+        function start(){
+          timer =  setInterval("fn()",1000);
+        }
+        function left(){
+            var imgs = document.getElementsByTagName('img')[0];
+            var lujing = imgs.src;
+            console.log(lujing);
+        }
+       
+    </script>
+</body>
+</html>

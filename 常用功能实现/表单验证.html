@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>表单验证</title>
+</head>
+
+<body>
+    <form method="post" action="" onsubmit="return eg.regCheck();">
+        <input type="hidden" name="" id="errnum" value="0"> 用户：
+        <input type="text" id="user">
+        <br> 密码：
+        <input type="password" id="pwd">
+        <br> 确认密码：
+        <input type="password" id="repwd">
+        <br> 简介：
+        <textarea name="" id="about" cols="20" rows="4"></textarea>
+        <br>
+        <input type="submit" value="注册" id="regBtn">
+        <input type="button" value="解锁" onclick="return eg.unlock()" id="regUnlock" style="display:none;">
+    </form>
+    <script>
+        var eg = {
+            $: function (id) {
+                return document.getElementById(id);
+            },
+            regCheck: function () {
+                var user = this.$("user");
+                var pwd = this.$("pwd");
+                var repwd = this.$("repwd");
+                if (user.value == '') {
+                    alert("用户名不能为空！");
+                    err();
+                    return false;
+
+                }
+                if (pwd.value == '') {
+                    alert("密码不能为空！");
+                    err();
+                    return false;
+
+                }
+                if (pwd.value != repwd.value) {
+                    alert("两次密码输入不一致！");
+                    err();
+
+                    return false;
+
+                }
+                var about = this.$("about");
+                if (about.value.length > 60) {
+                    alert('简历太长了！');
+                    err();
+                    return false;
+                }
+                return true;
+            },
+            err: function () {
+                var el = this.$("errnum");
+                var old = el.value;
+                el.value = parseInt(old) + 1;
+                lock();
+            },
+            lock: function () {
+                var err = this.$("errnum");
+                if (parseInt(err.value > 2)) {
+                    this.$("regBtn").disabled = true;
+                    this.$("regUnlock").style.display = "block";
+                }
+            },
+            unlock: function () {
+                this.$("regBtn").disabled = false;
+                this.$("regUnlock").style.display = "none";
+            }
+
+        }
+    </script>
+</body>
+
+</html>

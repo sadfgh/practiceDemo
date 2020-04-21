@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>放大镜效果</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            position: relative;
+            width: 700px;
+            height: 350px;
+            border: 1px solid black;
+        }
+        .box>.box1{
+            position: relative;
+            width: 300px;
+            height: 150px;
+            cursor: pointer;
+          
+        }
+        .box>.box1>img{
+            width: 100%;
+            height: 100%;
+       
+        }
+        .box>.box1>.magnifyingGlass{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50px;
+            height: 50px;
+            background-color: rgba(31, 29, 30, 0.5);
+        }
+
+
+        .box>.box2{
+            position: absolute;
+            right: 50px;
+            top: 0;
+            width: 250px;
+            height: 250px;
+            border: 1px solid pink;
+            overflow: hidden;
+        }
+        .box>.box2>img{
+            position: absolute;
+            width: 1500px;
+            height: 750px;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <!-- 原图和放大镜 -->
+        <div class="box1">
+            <img src="images/u0.jpg" alt="">
+            <div class=" magnifyingGlass"></div>
+        </div>
+        <!-- 放大效果展示 -->
+        <div class="box2">
+            <img src="images/u0.jpg" alt="">
+        </div> 
+    </div>
+    <script>
+        // 获取dom元素呀
+       var bigGlass = document.querySelector('.magnifyingGlass')
+       var box1 = document.querySelector('.box1')
+       var img = document.querySelectorAll('img')[1]
+        // 先让小罩罩和大框框里面的图片隐藏哦
+       img.style.display = 'none'
+       bigGlass.style.display = 'none'
+    //    这个是鼠标在浏览器上滑动触发的事件啦
+       document.onmousemove = function(e){
+        //    这个是要做一下兼容处理啦
+           var ev = e || event
+        //    这个是获取鼠标移动时的x,y坐标哦，这个25其实是小罩罩宽度的一半啦，
+        //    其实是我想让鼠标在罩罩的中心啦
+             var x = ev.clientX-25
+             var y = ev.clientY-25
+            //  这个就可以让小罩罩跟着鼠标移动啦
+             bigGlass.style.left = x+'px'
+            //  这个是让放大效果图跟着鼠标移动啦，这个5呢，我是让图片放大到了原图的5倍哦
+             img.style.left = -x*5+'px'
+             bigGlass.style.top = y+'px'
+             img.style.top = -y*5+'px'
+            // 这里做了一下条件处理呀，当到达一个值让我们的小罩罩和效果图显示或隐藏啦
+           if(ev.clientX>300||ev.clientY>150||ev.clientX<2||ev.clientY<2){
+               bigGlass.style.display = 'none'
+               img.style.display = 'none'
+           }else{
+            bigGlass.style.display = 'block'
+            img.style.display = 'block'
+           }
+
+       }        
+
+    </script>
+</body>
+</html>

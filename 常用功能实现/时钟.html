@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="CH-Zn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        
+        .box{
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+            border: 2px solid rgb(158, 87, 87);
+            border-radius: 50%;
+        }
+
+
+        .box>div:nth-of-type(1),
+        .box>div:nth-of-type(2),
+        .box>div:nth-of-type(3),
+        .box>div:nth-of-type(4),
+        .box>div:nth-of-type(5),
+        .box>div:nth-of-type(6){
+            position: absolute;
+            width: 1%;
+            height: 100%;
+            left: 50%;
+            transform: (-50%);
+            background-color: chartreuse;
+        }
+
+        .box>div:nth-of-type(1){
+
+            background-color: chartreuse;
+        }
+        .box>div:nth-of-type(1)::before,
+        .box>div:nth-of-type(2)::before,
+        .box>div:nth-of-type(3)::before,
+        .box>div:nth-of-type(4)::before,
+        .box>div:nth-of-type(5)::before,
+        .box>div:nth-of-type(6)::before{
+            position: absolute;
+            top: 1px;
+            left: -6px;
+            width: 15px;
+            height: 15px;
+            text-align: center;
+            line-height: 15px;
+            border-radius: 50%;
+            background-color: white;
+            font-size: 14px;
+          
+        }
+
+        .box>div:nth-of-type(1)::after,
+        .box>div:nth-of-type(2)::after,
+        .box>div:nth-of-type(3)::after,
+        .box>div:nth-of-type(4)::after,
+        .box>div:nth-of-type(5)::after,
+        .box>div:nth-of-type(6)::after{
+            position: absolute;
+            bottom: 0px;
+            left: -6px;
+            width: 15px;
+            height: 15px;
+            text-align: center;
+            line-height: 15px;
+            border-radius: 50%;
+            background-color: white;
+            font-size: 12px;
+          
+        }
+
+        .box>div:nth-of-type(1)::before{
+            content: '12';
+        }
+        .box>div:nth-of-type(1)::after{
+            content: '6';
+        }
+
+        .box>div:nth-of-type(2){
+           
+           transform: rotate(30deg);
+
+        }
+        .box>div:nth-of-type(2)::before{
+            content: '1';
+        }
+        .box>div:nth-of-type(2)::after{
+            content: '7';
+        }
+
+        .box>div:nth-of-type(3){
+    
+            transform: rotate(60deg);
+           
+        }
+        .box>div:nth-of-type(3)::before{
+            content: '2';
+        }
+        .box>div:nth-of-type(3)::after{
+            content: '8';
+        }
+
+        .box>div:nth-of-type(4){
+          
+            transform: rotate(90deg);
+       
+        }
+        .box>div:nth-of-type(4)::before{
+            content: '3';
+        }
+        .box>div:nth-of-type(4)::after{
+            content: '9';
+        }
+
+        .box>div:nth-of-type(5){
+         
+            transform: rotate(120deg);
+         
+        }
+        .box>div:nth-of-type(5)::before{
+            content: '4';   
+        }
+        .box>div:nth-of-type(5)::after{
+            content: '10';
+        }
+
+
+        .box>div:nth-of-type(6){
+          
+            transform: rotate(150deg);
+         
+        }
+        .box>div:nth-of-type(6)::before{
+            content: '5';
+  
+        }
+        .box>div:nth-of-type(6)::after{
+            content: '11';
+     
+        }
+
+
+        .box>.neihuan{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 70%;
+            height: 70%;
+            transform: translate(-50%,-50%);
+            background-color: white;
+            border-radius: 50%;
+        }
+        .neihuan>.yuanxing{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 10px;
+            height: 10px;
+            z-index: 2;
+            transform: translate(-50%,-50%);
+            background-color: red;
+            border-radius: 50%;
+        }
+        .neihuan>.shizhen{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            /* transform: translate(-50%,-100%); */
+            width: 5%;
+            height: 25%;
+            background-color: pink;
+            transform-origin: center bottom;
+            /* transform: translate(-50%,-100%) rotate(150deg); */
+            /* animation: clockAnimation 43200s infinite steps(60); */
+        }
+        .neihuan>.fenzhen{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            /* transform: translate(-50%,-100%); */
+            width: 3%;
+            height: 40%;
+            background-color: blue;
+            transform-origin: center bottom;
+            /* animation: clockAnimation 3600s infinite steps(60); */
+        }
+        .neihuan>.miaozhen{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            /* transform: translate(-50%,-100%); */
+            width: 1%;
+            height: 50%;
+            background-color: green;
+            transform-origin: center bottom;
+            /* animation: clockAnimation 60s infinite steps(60); */
+           
+        }
+        /* @keyframes clockAnimation{
+            0%{
+                transform: translate(-50%,-100%) rotate(0deg) ;
+            }
+            100%{
+                transform: translate(-50%,-100%) rotate(360deg) ;
+            }
+        } */
+    </style>
+    <script>
+        window.onload = function(){
+            var shizhen = document.getElementsByClassName('shizhen')[0];
+            var fenzhen = document.querySelector('.fenzhen');
+            var miaozhen = document.querySelector('.miaozhen');
+            var date = new Date();
+            var hours = date.getHours();
+            var minutes = date.getMinutes();
+            var seconds = date.getSeconds();
+            if(hours>12){
+                hours = hours - 12;
+            }
+            console.log(hours+'时'+minutes+'分'+seconds+'秒');
+            console.log(Math.floor((minutes*60+seconds)/3600*100)/100*30); 
+            var shijiaodu = hours*30+Math.floor((minutes*60+seconds)/3600*100)/100*30;
+            var fenjiaodu = minutes*6;
+            var miaojiaodu = seconds*6;
+            console.log(shijiaodu+''+fenjiaodu+''+miaojiaodu);
+            shizhen.style.transform = "translate(-50%,-100%) rotate("+shijiaodu+"deg)";
+            fenzhen.style.transform = "translate(-50%,-100%) rotate("+fenjiaodu+"deg)";
+            miaozhen.style.transform = "translate(-50%,-100%) rotate("+miaojiaodu+"deg)";
+            clearInterval(timer);
+            var timer = setInterval(() => {
+                miaojiaodu+=6;
+                miaozhen.style.transform = "translate(-50%,-100%) rotate("+miaojiaodu+"deg)";
+                if(miaojiaodu%360==0){
+                    fenjiaodu+=6;
+                    fenzhen.style.transform = "translate(-50%,-100%) rotate("+fenjiaodu+"deg)";
+                    if(fenjiaodu%12==0){
+                        shijiaodu+=1;
+                        shizhen.style.transform = "translate(-50%,-100%) rotate("+shijiaodu+"deg)";
+                    }
+                }
+                
+            }, 1000);
+        
+        }
+           
+        </script>
+</head>
+<body>
+        <!-- ie出不来效果，其他浏览器支持的蛮好的 -->
+    <div class="box">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div class="neihuan">
+            <div class="yuanxing"></div>
+            <div class="shizhen"></div>
+            <div class="fenzhen"></div>
+            <div class="miaozhen"></div>
+        </div>
+    </div>
+    
+</body>
+</html>

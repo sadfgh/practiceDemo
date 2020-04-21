@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>禁止保存</title>
+</head>
+
+<body>
+    <h1>回手掏，鬼刀一K看不见</h1>
+</body>
+<script>
+    //右键菜单事件
+    document.oncontextmenu = function () {
+            alert('保存不了，兄弟');
+            return false;
+        }
+        //点击Ctrl+S事件
+    document.onkeydown = function (ev) {
+        var oevent = ev || Event;
+        if (oevent.keyCode == 83 && oevent.ctrlKey) {
+            alert('保存不了，兄弟');
+            return false;
+        }
+    }
+</script>
+
+</html>

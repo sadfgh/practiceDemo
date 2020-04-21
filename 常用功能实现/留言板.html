@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>留言板</title>
+</head>
+
+<body>
+    <div>
+        <div>
+            姓名：
+            <input type="text">
+            <br>内容：
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+            <br>
+            <input type="button" value="提交">
+        </div>
+        <h3>留言内容</h3>
+        <ul>
+
+        </ul>
+    </div>
+    <script>
+        var iputName = document.getElementsByTagName('input')[0];
+        var iputQure = document.getElementsByTagName('input')[1];
+        var textCont = document.getElementsByTagName('textarea')[0];
+        var ulCont = document.getElementsByTagName('ul')[0];
+        console.log(iputQure);
+
+        function isNull() {
+            if (iputName.value == '') {
+                alert('姓名不能为空');
+            }
+            if (textCont.value == '') {
+                alert('内容不能为空');
+            }
+        }
+
+        function addElement() {
+            isNull();
+            var li = document.createElement('li');
+            var h4 = document.createElement('h4');
+            var p = document.createElement('p');
+            h4.innerHTML = iputName.value;
+            p.innerHTML = textCont.value;
+
+            li.appendChild(h4);
+            li.appendChild(p);
+            ulCont.appendChild(li);
+
+            var beforeLi = ulCont.firstChild || ulCont.firstElementChild;
+            ulCont.insertBefore(li, beforeLi);
+        }
+
+
+        iputQure.onclick = addElement;
+    </script>
+</body>
+
+</html>

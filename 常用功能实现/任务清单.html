@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>任务清单</title>
+</head>
+
+<body>
+    <div>
+        <h3>任务内容：</h3>
+        <div class="cont"></div>
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+        <br>
+        <input type="button" value="添加任务">
+    </div>
+    <script>
+        var dCont = document.getElementsByClassName('cont')[0];
+        var textCont = document.getElementsByTagName('textarea')[0];
+        var iBtn = document.getElementsByTagName('input')[0];
+        var count = 0;
+        iBtn.onclick = function () {
+            count++;
+            var p = document.createElement('p');
+            p.innerHTML = count + '.' + textCont.value;
+            dCont.appendChild(p);
+            var getP = document.getElementsByTagName('p');
+            for (var i = 0; i < getP.length; i++) {
+                getP[i].onmouseover = function () {
+                    for (var i = 0; i < getP.length; i++) {
+                        getP[i].style.backgroundColor = '';
+                    }
+                    this.style.backgroundColor = 'yellow';
+                    var spanCont = document.createElement('span');
+                    spanCont.innerHTML = '你确定要删除它吗';
+                    this.appendChild(spanCont);
+
+                }
+                getP[i].onmouseout = function () {
+                    for (var i = 0; i < getP.length; i++) {
+                        getP[i].style.backgroundColor = '';
+                    }
+                    this.removeChild(this.children[0]);
+
+                }
+                getP[i].onclick = function () {
+                    dCont.removeChild(this);
+                }
+            }
+
+
+        }
+    </script>
+</body>
+
+</html>

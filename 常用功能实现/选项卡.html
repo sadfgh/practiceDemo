@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>选项卡</title>
+    <style type="text/css">
+        ul,
+        li,
+        a {
+            padding: 0;
+            margin: 0;
+        }
+        
+        ul {
+            width: 450px;
+            height: 45px;
+            text-align: left;
+            list-style: none;
+            background-color: beige;
+            border: 1px solid black;
+        }
+        
+        li {
+            float: left;
+            padding: 12px 16px;
+        }
+        
+        li:hover {
+            float: left;
+            padding: 10px 15px;
+            background-color: white;
+            border-top: 2px solid red;
+            border-left: 1px solid black;
+            border-right: 1px solid black;
+        }
+        
+        a {
+            text-decoration: none;
+            color: black;
+        }
+        
+        a:hover {
+            color: red;
+        }
+        
+        div {
+            width: 450px;
+            height: 300px;
+            border-left: 1px solid black;
+            border-right: 1px solid black;
+            border-bottom: 1px solid black;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li><a href="">图片</a></li>
+        <li><a href="">专栏</a></li>
+        <li><a href="">热点</a></li>
+    </ul>
+    <div style="display:block;">
+        微视频：梦想从学习开始 河南兰考：小康路上打造发展新名片 理上网来 数次会见德国总理 习近平讲话释放这些重要信息 中国稳健前行：锻造中华民族伟大复兴的中流砥柱 潘维廉:中国成就令人瞩目 心连心 爱香港 中秋节 又放了？乱港分子黄之锋获准继续保释 这俩女强人将在联合国发声 揭示香港真相(图) 中环站口被暴徒纵火员工受伤 港铁怒了(图)
+
+    </div>
+    <div>
+        孙春兰去这儿3天后 傅政华也率队前往(图) 山东民政厅厅长陈先运被查 系主动投案(图/简历) 洪秀柱现身挺韩造势晚会 开场直言“我讨厌韩国瑜” 纽约机场陷入恐慌大混乱 起因会让中国人很不舒服 易建联拼到让全国网友都心疼 姚明哭照刷屏(图) 我国又一件“芯”事落定 这就是中国制造的“魂” 县公安局刑侦大队原大队长强奸幼女 获刑7年半 金正恩指导紧急会议 神情严峻大批各级官员(图) “文明的对话”第三站：雅典卫城博物馆 为了一个女生 扬州这所中学全班从四楼搬到了一楼
+    </div>
+    <div>
+        梦想从学习开始 菲媒：中国不侵略他国 而某国过去10年就搞乱20余国 早点用孙铭徽阿不都会怎样？可惜没有如果了 FIA解释为何勒克莱尔没有被罚 有两个原因 滴滴两月领百张罚单累计超1000万 超百家竞争者入局 那些唱衰香港的人 他们错在哪？ 男子揽双色球5786万大奖 花一天时间反复核对奖票 推特放任大量“机器人”账号热炒“港独”言论 河南马戏团脱逃老虎系租借:若意外死亡需赔偿10万 姚明：易建联不应该度过最后40秒的煎熬时刻 中国有哪些最霸气武器让美俄都羡慕？这款武器做到了 运球多节奏
+    </div>
+    <script>
+        var li = document.getElementsByTagName('li');
+        var div = document.getElementsByTagName('div');
+        for (var i = 0; i < li.length; i++) {
+            li[i].setAttribute('click', i);
+            li[i].onmouseover = function () {
+                for (var i = 0; i < div.length; i++) {
+                    div[i].style.display = 'none';
+                }
+                var l = this.getAttribute('click');
+                div[l].style.display = 'block';
+                console.log(l);
+
+            }
+
+
+
+
+        }
+    </script>
+</body>
+
+</html>

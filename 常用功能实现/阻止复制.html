@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>阻止复制</title>
+</head>
+
+<body>
+    <p>
+        注：本表用于推荐学校毕业综合实践优秀成果，由各二级教学单位填写，在答辩完成一周内，以院系为单位上交教务处，每个专业限报3个，同时上交全部成果资料（包括电子稿）。题目性质填写“理论应用研究、工程实践（调研）、产品（模型）制作”（任选1项）。
+    </p>
+    <script>
+        document.oncontextmenu = function () {
+            return false;
+        }
+        document.onkeydown = function (ev) {
+            var oevent = ev || Event;
+            if (oevent.keyCode == 67 && oevent.ctrlKey) {
+                return false;
+            }
+        }
+    </script>
+</body>
+
+</html>

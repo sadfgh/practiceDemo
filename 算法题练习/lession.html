@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>练习</title>
+
+</head>
+
+<body>
+    <!--级联选项
+    <h3>省级市</h3>
+    <select name="" id="">
+
+    </select>省
+    <select name="" id="">
+
+    </select>市-->
+    <!-- 表单验证
+    <form action="https://www.baidu.com" method="post">
+        用户名：
+        <input type="text" placeholder="请输入用户名"><span></span>
+        <br> 密码：
+        <input type="password" placeholder="请输入密码"><span></span>
+        <br> 确认密码：
+        <input type="password" placeholder="再次确认密码"><span></span>
+        <br>
+        <input type="submit" value="注册">
+    </form>-->
+    <!--<table border="1">
+        <tr>
+            <th>
+                <input type="checkbox" id="check_all">
+            </th>
+            <th>姓名</th>
+            <th>性别</th>
+            <th>年龄</th>
+        </tr>
+        <tr>
+            <th>
+                <input type="checkbox" name="check">
+            </th>
+            <td>理解</td>
+            <td>女</td>
+            <td>20</td>
+        </tr>
+        <tr>
+            <th>
+                <input type="checkbox" name="check">
+            </th>
+            <td>理解</td>
+            <td>女</td>
+            <td>20</td>
+        </tr>
+        <tr>
+            <th>
+                <input type="checkbox" name="check">
+            </th>
+            <td>理解</td>
+            <td>女</td>
+            <td>20</td>
+        </tr>
+        <tr>
+            <th>
+                <input type="checkbox" name="check">
+            </th>
+            <td>理解</td>
+            <td>女</td>
+            <td>20</td>
+        </tr>
+
+    </table>-->
+
+    <script type="text/javascript">
+        /* 全选效果
+                var checkall = document.getElementById("check_all");
+                var checks = document.getElementsByName("check");
+                checkall.onclick = function () {
+                    for (var i = 0; i < checks.length; i++) {
+                        checks[i].checked = this.checked;
+                        checks[i].onclick = function () {
+                            var count = 0;
+                            for (var j = 0; j < checks.length; j++) {
+
+                                if (checks[j].checked) {
+                                    count++;
+                                }
+                            }
+                            console.log(count);
+                            checkall.checked = (count == checks.length);
+                        }
+                    }
+                }*/
+
+
+
+
+
+
+
+
+
+        /*表单验证
+                                                                var form = document.getElementsByTagName("form")[0];
+                                                var use = document.getElementsByTagName("input")[0];
+                                                                var pwd = document.getElementsByTagName("input")[1];
+                                                                         var pwds = document.getElementsByTagName("input")[2];
+                                                    var usetip = document.getElementsByTagName('span')[0];
+                                            var pwdtip = document.getElementsByTagName('span')[1];
+                                                        var pwdstip = document.getElementsByTagName('span')[2];
+
+                                             use.onblur = function () {
+                                                        usetip.innerHTML = '';
+                                                                        if (use.value == '') {
+                                                                usetip.innerHTML = "<font color = 'red'>use no null</font>";
+                                                                             }
+                                             }
+                                    pwd.onblur = function () {
+                                                              pwdtip.innerHTML = '';
+                                    if (pwd.value == '') {
+                                                        pwdtip.innerHTML = "<font color = 'red'>password no null</font>";
+                                            }
+                                                                   }
+                                            pwds.onblur = function () {
+                                 pwdstip.innerHTML = '';
+            if (pwds.value == '') {
+     pwdstip.innerHTML = "<font color = 'red'>password no null</font>";
+                                                                                }
+                             if (pwds.value != pwd.value) {
+                         pwdstip.innerHTML = "<font color = 'red'>password no target</font>";
+                                                                                     }
+                                                                            }
+
+                                                    form.onsubmit = function () {
+                                                              use.onblur();
+                                                       pwd.onblur();
+                                                       pwds.onblur();
+                                                   if (usetip.innerHTML == '' && pwdtip.innerHTML == '' && pwdstip.innerHTML == '') {
+                                                                                    return true;
+                                                                           }
+                                                                          return false;
+                                                 }*/
+
+
+
+
+
+
+
+
+
+        /* 级联选项
+                var arr = ['广东', '广西', '福建', '四川'];
+                var select = document.getElementsByTagName('select')[0];
+                var select1 = document.getElementsByTagName('select')[1];
+                for (var i = 0; i < arr.length; i++) {
+
+                    var option = document.createElement('option');
+                    option.value = arr[i];
+                    option.innerHTML = arr[i];
+                    var opt = select.appendChild(option);
+                    opt.onclick = function () {
+                        select1.innerHTML = '';
+                        switch (this.value) {
+                        case '广东':
+                            var guangdong = ['广州', '佛山', '茂名', '深圳'];
+                            for (var i = 0; i < guangdong.length; i++) {
+                                var option = document.createElement('option');
+                                option.value = guangdong[i];
+                                option.innerHTML = guangdong[i];
+                                select1.appendChild(option);
+                            }
+                            break;
+                        case '广西':
+                            var guangxi = ['南宁', '桂林', '玉林', '柳州'];
+                            for (var i = 0; i < guangxi.length; i++) {
+                                var option = document.createElement('option');
+                                option.value = guangxi[i];
+                                option.innerHTML = guangxi[i];
+                                select1.appendChild(option);
+                            }
+                            break;
+                        case '福建':
+                            var fujian = ['福州', '厦门', '三明', '泉州'];
+                            for (var i = 0; i < fujian.length; i++) {
+                                var option = document.createElement('option');
+                                option.value = fujian[i];
+                                option.innerHTML = fujian[i];
+                                select1.appendChild(option);
+                            }
+                            break;
+                        case '四川':
+                            var shichun = ['成都', '泸州', '攀枝花', '乐山'];
+                            for (var i = 0; i < shichun.length; i++) {
+                                var option = document.createElement('option');
+                                option.value = shichun[i];
+                                option.innerHTML = shichun[i];
+                                select1.appendChild(option);
+                            }
+                            break;
+                        }
+                    }
+                }
+                */
+    </script>
+</body>
+
+</html>

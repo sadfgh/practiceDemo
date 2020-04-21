@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" onclick="star(event)">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style type="text/css">
+  
+</style>
+<script type="text/javascript">
+    function star(e){
+		var obj = document.createElement("img");
+		obj.src="xingxing.jpg";
+		document.body.appendChild(obj);
+		var w = Math.floor(Math.random()*80+40);
+		obj.width = w;
+		var x=e.clientX;
+		var y=e.clientY;
+		obj.style.position="absolute";
+		obj.style.top=y+"px";
+		obj.style.left=x+"px";
+		
+		}
+</script>
+</head>
+
+<body>
+
+</div>
+</body>
+</html>

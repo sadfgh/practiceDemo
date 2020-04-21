@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>联动选择</title>
+    <style type="text/css">
+
+    </style>
+</head>
+
+<body>
+    <input type="checkbox" id="all">全选
+    <div class="box">
+        <input type="checkbox">
+        <br>
+        <input type="checkbox">
+        <br>
+        <input type="checkbox">
+        <br>
+        <input type="checkbox">
+        <br>
+        <input type="checkbox">
+    </div>
+    <script>
+        var allche = document.getElementById("all");
+        var box = document.getElementsByClassName("box")[0];
+        var input = box.getElementsByTagName('input');
+        allche.onclick = function () {
+            for (var i = 0; i < input.length; i++) {
+                input[i].checked = allche.checked;
+                input[i].onclick = function () {
+                    var count = 0;
+                    for (var i = 0; i < input.length; i++) {
+                        if (input[i].checked) {
+                            count++
+                        }
+                    }
+                    if (count == input.length) {
+                        allche.checked = true;
+                    } else {
+                        allche.checked = false;
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>文字输入框提示</title>
+    <style type="text/css">
+        body {
+            background-color: cadetblue;
+        }
+        
+        .login-form {
+            width: 100%;
+            height: 350px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            margin-top: -125px;
+            margin-left: -150px;
+            font-size: 16px;
+            font-weight: 400;
+            font-family: cursive;
+            font-style: italic;
+        }
+        
+        input {
+            width: 180px;
+            height: 25px;
+            border-radius: 5px;
+        }
+        
+        .login-btn {
+            width: 50px;
+            height: 25px;
+            margin-left: 70px;
+            color: black;
+        }
+        
+        .login-form h2 {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="login-model">
+        <form action="" class="login-form">
+            <h2>欢迎登录xxx管理系统</h2>
+            <br>用户名：
+
+            <input type="text" value="请输入用户名" style="color:#ccc;"><span></span>
+
+
+            <br>
+            <br> 密&nbsp;&nbsp;&nbsp;码：
+
+            <input type="password"><span></span>
+            <br>
+            <br>
+            <input type="button" value="登录" class="login-btn">
+            <input type="button" value="注册" class="login-btn">
+        </form>
+    </div>
+    <script>
+        var iptUser = document.getElementsByTagName('input')[0];
+        var iptPwd = document.getElementsByTagName('input')[1];
+        var iptLogin = document.getElementsByTagName('input')[2];
+        var iptRegite = document.getElementsByTagName('input')[3];
+
+
+        var spanUserNullTip = document.getElementsByTagName('span')[0];
+
+
+        var spanPwdNullTip = document.getElementsByTagName('span')[1];
+
+        iptUser.onfocus = function () {
+
+            if (iptUser.value == '请输入用户名') {
+                iptUser.value = '';
+                iptUser.style.color = 'black';
+                spanUserNullTip.innerHTML = '';
+            }
+
+        }
+        iptUser.onblur = function () {
+            if (iptUser.value == '') {
+                iptUser.value = '请输入用户名';
+                iptUser.style.color = '#ccc';
+                spanUserNullTip.innerHTML = '用户名不能为空';
+                spanUserNullTip.style.color = 'red';
+
+
+            }
+        }
+        iptPwd.onfocus = function () {
+
+            iptPwd.style.color = 'black';
+            spanPwdNullTip.innerHTML = '';
+
+
+        }
+        iptPwd.onblur = function () {
+
+            spanPwdNullTip.innerHTML = '密码不能为空';
+            spanPwdNullTip.style.color = 'red';
+
+
+
+        }
+    </script>
+</body>
+
+</html>

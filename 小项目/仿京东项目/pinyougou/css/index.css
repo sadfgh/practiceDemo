@@ -1,0 +1,636 @@
+/*主体部分*/
+.main{
+	position: relative;
+	width: 100%;
+	height: 470px;
+	margin: 10px 0 30px;
+}
+
+/*左侧导航栏*/
+.main .main-left-nav{
+	position: absolute;
+	left: 0;
+	padding: 10px 20px;
+	width: 150px;
+	height: 450px;
+	background-color: #fff;
+}
+.main-left-nav li{
+	padding: 2px 0;
+}
+.main-left-nav a{
+	font-size: 13px;
+	color: #444;
+}
+.main-left-nav a:hover{
+	color: #e33333;
+}
+
+
+/*大轮播图*/
+.main .main-picture-carousel{
+	position: absolute;
+	
+	left: 200px;
+	width: 590px;
+	height: 100%;
+}
+.main-picture-carousel img{
+	display: block;
+	
+}
+.main-picture-carousel ol{
+	position: absolute;
+	bottom: 25px;
+	left: 30px;
+}
+.main-picture-carousel ol li{
+	float: left;
+	width: 10px;
+	height: 10px;
+	background-color:rgba(255,255,255,.7);
+	border-radius: 50%;
+	margin-right: 6px;
+}
+
+ .carousel-button-left,
+ .carousel-button-right{
+	position: absolute;
+	top: 50%;
+	width: 25px;
+	height: 35px;
+	margin-top: -15px;
+	text-align: center;
+	line-height: 35px;
+	background-color: rgba(0,0,0,0.2);
+}
+ .carousel-button-left:hover,
+ .carousel-button-right:hover{
+	background-color: rgba(0,0,0,0.5);
+}
+ .left-position{
+	border-radius: 0 18px 18px 0;
+	left: 0;
+}
+
+ .right-position{
+	border-radius: 18px 0 0 18px ;
+	right: 0;
+}
+ i{
+	color: #fff;
+	font-size: 16px;
+	font-family: "icomoon";
+}
+
+/*垂直轮播*/
+.main .main-vertical-carousel{
+	position: absolute;
+	right: 200px;
+	width: 190px;
+	height: 100%;
+}
+.main-vertical-carousel li a{
+	display: block;
+	width: 100%;
+	height: 150px;
+}
+.main-vertical-carousel .img-margin{
+	margin: 10px 0;
+}
+.main-vertical-carousel img{
+	width: 100%;
+	height: 100%;
+}
+
+.main-vertical-carousel .vertical-left{
+	border-radius: 0 18px 18px 0;
+	left: 0;
+}
+
+.main-vertical-carousel .vertical-right{
+	border-radius: 18px 0 0 18px ;
+	right: 0;
+}
+.main-vertical-carousel i{
+	color: #fff;
+	font-size: 16px;
+	font-family: "icomoon";
+}
+
+
+/*右边功能栏*/
+
+.main .main-right-function{
+	position: absolute;
+	right: 0;
+	width: 190px;
+	height: 100%;
+	/*padding: 0 10px;*/
+	background-color: #fff;
+}
+
+.main-right-function .function-login{
+	position: relative;
+	padding: 0 10px;
+	width: 170px;
+	height: 102px;
+}
+.function-login .user-login{
+	position: absolute;
+	top: 15px;
+	width: 100%;
+	height: 44px;
+	
+}
+.user-login .user-picture{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 44px;
+	height: 44px;
+}
+.user-picture img{
+	width: 44px;
+	height: 44px;
+	border-radius: 50%;
+}
+
+.user-login .user-loginandregister{
+	position: absolute;
+	top: 0;
+	left: 54px;
+	width: 116px;
+	height: 44px;
+}
+
+.user-loginandregister .user-font-color{
+	color: #444;
+}
+.user-font-color:hover{
+	color: #e33333;
+}
+.function-login .user-vip{
+	position: absolute;
+	bottom: 10px;
+	left: 0;
+	padding: 0 10px;
+	width: 170px;
+	height: 25px;
+
+}
+.user-vip .user-vip-left,
+.user-vip .user-vip-right{
+	height: 25px;
+	line-height: 25px;
+	text-align: center;
+	padding: 0 15px;
+	border-radius: 14px;
+}
+.user-vip .user-vip-left:hover,
+.user-vip .user-vip-right:hover{
+	background-color:#c23333;
+}
+.user-vip-left a:hover,
+.user-vip-right a:hover{
+	color: #fff;
+}
+
+.user-vip .user-vip-left{
+	float: left;
+	background-color:#e1251b;
+}
+.user-vip-left a{
+	color: #fff;
+}
+
+.user-vip .user-vip-right{
+	float: right;
+	background-color: #363634;
+}
+.user-vip-right a{
+	color: #e5d790; 
+}
+
+
+
+
+
+.main-right-function .function-hotspot{
+	height: 130px;
+	width: 170px;
+	padding: 0 10px;
+
+}
+.function-hotspot .hotspot-herder{
+	width: 100%;
+	height: 20px;
+	padding-top: 9px;
+	border-top: 1px solid  #f4f4f4;
+	margin-bottom: 10px;
+	line-height: 20px;
+	
+}
+.hotspot-herder h5{
+	height: 20px;
+	float: left;
+	font-size: 14px;
+
+}
+.hotspot-herder a{
+	position: relative;
+	display: inline-block;
+	float: right;
+	height: 20px;
+}
+.hotspot-herder i{
+	position: absolute;
+	top: 0;
+	right: -10px;
+	display: inline-block;
+	height: 20px;
+	line-height: 23px;
+	color: #999;
+	font-family: 'icomoon';
+}
+.hotspot-content li{
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	width: 100%;
+	height: 16px;
+	margin-bottom: 6px;
+}
+.hotspot-content span{
+	display: inline-block;
+   	font-size: 12px;
+	height: 16px;
+	width: 35px;
+	line-height: 16px;
+	text-align: center;
+	color:#e1251b;
+	background-color:rgba(225,37,27,.08);
+	margin-right: 6px;
+}
+
+
+
+
+.main-right-function .function-convenient{
+	height: 220px;
+	padding-top: 8px;
+	border-top: 1px solid  #f4f4f4;
+	padding-bottom: 9px;
+	
+}
+
+.function-convenient li{
+	float: left;
+	width: 63px;
+	height: 55px;
+	text-align: center;
+	background-color:#fff;
+}
+.function-convenient i{
+	display: block;
+}
+.function-convenient img{
+	width: 28px;
+	height: 28px;
+}
+
+
+/*楼梯内容部分*/
+
+.content{
+	width: 100%;
+	background-color: pink;
+}
+/*好货秒杀*/
+.content .content-seckill{
+	width: 100%;
+}
+.content-public-module1{
+	height: 260px;
+    margin-bottom: 20px;
+}
+.content-public-module1 .content-module1-left{
+	float: left;
+	width: 190px;
+	height: 100%;
+	color:#fff;
+	background-color:#e83632;
+}
+.content-module1-left a{
+	display: block;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	color: #fff;
+	background-image: url(../img/seckill.png);
+}
+.content-module1-left h3{
+	width: 100%;
+	height: 80px;
+	line-height: 80px;
+	text-align: center;
+	font-size: 30px;
+
+}
+
+.content-module1-left div{
+	position: absolute;
+	bottom: 20px;
+	width: 100%;
+}
+.content-module1-left p{
+	width: 100%;
+	margin: 7px 0;
+	text-align: center;
+}
+.content-module1-left p strong{
+	font-size: 16px;
+	font-weight: 700;
+}
+.seckill-time span{
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	font-size: 17px;
+	font-weight: 700;
+	text-align: center;
+	margin: 0 5px;
+	background-color:#2f3430;
+}
+
+.content-public-module1 .content-module1-right{
+	float: left;
+	width: 1000px;
+	height: 100%;
+	background-color:#fff;
+}
+.content-module1-right .module1-sum-left{
+	position: relative;
+	float: left;
+	padding: 0 1px;
+	width: 808px;
+	height: 100%;
+}
+.module1-sum-left .carousel-module{
+	display: block;
+	position: relative;
+	float: left;
+	width: 202px;
+	height: 100%;
+}
+.carousel-module .carousel-img{
+	position: absolute;
+	top: 30px;
+	left: 20px;
+	text-align: center;
+	width: 162px;
+	height: 140px;
+}
+
+
+
+.carousel-module .carousel-price{
+	position: absolute;
+	bottom: 30px;
+	left: 20px;
+	width: 162px;
+	height: 60px;
+}
+.carousel-price h6{
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	font-size: 12px;
+	color: #333;
+	font-weight: normal;
+	margin: 5px 0;
+}
+.box{
+	width: 160px;
+	height: 24px;
+	border: 1px solid #e1251b;
+}
+.form-style{
+	float: left;
+	width: 0;
+	height: 0;
+	border-top: 12px solid #e1251b;
+	border-right: 12px solid white;
+	border-bottom: 12px solid white;
+	border-left: 12px solid #e1251b;
+}
+.box-left{
+	float: left;
+	width: 68px;
+	height: 24px;
+	line-height: 24px;
+	text-align: center;
+	color:white;
+	background-color: #e1251b;
+}
+.box-right{
+	float: right;
+	width: 68px;
+	height: 24px;
+	line-height: 24px;
+	text-align: center;
+	color: #999;
+	background-color: white;
+}
+
+.content-module1-right .module1-sum-right{
+	float: left;
+	position: relative;
+	width: 170px;
+	height: 100%;
+	padding: 0 10px;
+}
+.module1-sum-right a{
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 100%;
+	
+}
+.module1-sum-right .module1-corousel-top{
+	position: absolute;
+	top: 30px;
+	left: 20px;
+	width: 130px;
+	height: 130px;
+	
+
+}
+.module1-sum-right .module1-corousel-bottom{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 90px;
+	background-color:rgba(220,224,236,.5);
+}
+.module1-corousel-bottom h5{
+	font-size: 14px;
+	color: #999;
+	font-weight: normal;
+	text-align: center;
+}
+.module1-corousel-bottom h6{
+	font-size: 14px;
+
+	color: #000;
+	font-weight: 700;
+	text-align: center;
+}
+.module1-corousel-bottom p{
+	width: 100%;
+	height: 20px;
+	text-align: center;
+	
+	
+}
+.module1-corousel-bottom p span{
+	position: relative;
+	display: inline-block;
+	color: #e1251b;
+	height: 20px;
+	font-weight: 700;
+	line-height: 20px;
+	padding: 0 10px;
+	padding-right: 20px;
+	text-align: center;
+	border-radius: 10px;
+	border: 1px solid #e1251b;
+	
+}
+.module1-corousel-bottom p span i{
+	position: absolute;
+	right: 10px;
+	bottom: -1px;
+	color: #e1251b;
+	font-family: 'icomoon';
+}
+.module1-sum-right ol{
+	position: absolute;
+	left: 50%;
+	margin-left: -7px;
+	bottom: 10px;
+}
+.module1-sum-right ol li{
+	float: left;
+	width: 5px;
+	height: 5px;
+	margin-right: 5px;
+	border-radius: 50%;
+	background-color: rgba(0,0,0,.5);
+}
+
+
+
+
+
+
+
+/*特色专区*/
+.content .content-item{
+	width: 100%;
+
+}
+.content-item .content-item-border{
+	margin: 10px;
+}
+.content-item-border .border-nav{
+	width: 100%;
+	height: 40px;
+	margin-bottom: 10px;
+	line-height: 40px;
+	text-align: center;
+	
+}
+.border-nav .border-nav-left h3{
+	font-size: 25px;
+}
+.border-nav .border-nav-right li{
+	float: left;
+	margin: 0 10px;
+	font-size: 15px;
+
+}
+.border-content .border-content-left {
+	width: 50%;
+	background-color: #f8f8f8;
+}
+.border-content-left .content-left-top{
+	width: 100%;
+	box-sizing: border-box;
+	text-align: center;
+}
+ .content-left-top a{
+ 	display: block;
+ 	width: 180px;
+ 	text-align: center;
+ 	margin: 20px auto;
+ 	margin-bottom: 13px;
+ }
+.content-left-top a span{
+	display: block;
+
+	width: 100%;
+	height: 35px;
+	overflow: hidden;
+}
+.border-content-left .content-left-bottom{
+	width: 100%;
+}
+.content-left-bottom li{
+	float: left;
+	width: 50%;
+	box-sizing: border-box;
+	border: 2px solid #fff;
+	text-align: center;
+	padding: 7px 0;
+}
+.content-left-bottom li:nth-of-type(n-4){
+	border-right: 0;
+	border-bottom: 0;
+}
+.content-left-bottom li:nth-of-type(odd){
+	border-left: 0;
+}
+
+.border-content .border-content-right{
+	width: 50%;
+	height: 200px;
+	background-color: pink;
+}
+
+
+
+
+
+
+
+
+
+
+
+.content-public-module2{
+	height: 305px;
+    margin-bottom: 20px;
+    
+}
+.content-public-module2 .content-module2{
+	width: 590px;
+	height: 100%;
+	background-color: #fff;
+}
+
+.content .content-channel{
+
+}

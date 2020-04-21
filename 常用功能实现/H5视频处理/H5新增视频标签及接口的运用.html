@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>视频播放</title>
+    <style type="text/css">
+        button{
+            width: 90px;
+            height: 30px;
+            background-color: beige;
+        }
+    </style>
+</head>
+<body>
+   <div style="text-align:center">    
+    <video id="fn" controls = controls loop = loop poster="one.jpg" width="400" height="250">
+       <source src="fun.mp4">
+        你的浏览器不支持视频播放
+    </video>
+    <div>
+     <button onclick="playPause()">播放/暂停</button>
+     <button onclick="big()">放大</button>
+     <button onclick="small()">缩小</button>
+     <button onclick="normal()">正常</button>
+    </div>
+   </div>
+  <script>
+      var video = document.getElementById('fn');
+        function playPause(){
+            if(video.paused){
+                video.play();
+            }else{
+                video.pause();
+            }
+        }
+      function big(){
+          video.width = video.width+20;
+          video.height = video.height+20;
+      }
+      function small(){
+          video.width = video.width-20;
+          video.height = video.height - 20;
+      }
+      function normal(){
+          video.width = 400;
+          video.height = 250;
+      }
+    </script>
+</body>
+</html>

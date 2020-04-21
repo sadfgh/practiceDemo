@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>爱心</title>
+    <style type="text/css">
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        body {
+            background-color: black;
+        }
+        
+        .disc1 {
+            width: 100%;
+            height: 100%;
+            border-radius: 100%;
+            background-color: red;
+        }
+        
+        .disc2 {
+            width: 100%;
+            height: 100%;
+            border-radius: 100%;
+            background-color: red;
+            position: absolute;
+            top: 0;
+            left: 50%;
+        }
+        
+        .square {
+            width: 100%;
+            height: 100%;
+            background-color: red;
+            position: absolute;
+            transform: rotate(45deg);
+            top: 25%;
+            left: 25%;
+            border-radius: 10%;
+        }
+        
+        span {
+            position: fixed;
+            font-size: 70px;
+            line-height: 70px;
+            text-align: center;
+            margin-top: -50px;
+            margin-left: -200px;
+            width: 400px;
+            height: 100px;
+            top: 50%;
+            left: 50%;
+            color: white;
+        }
+    </style>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            function Love() {
+
+                var div = $("<div style='position:absolute;'><div class='disc1'></div><div class='disc2'></div><div class='square'></div></div>");
+
+
+                function rmd(min, max) {
+                    return parseInt(min + Math.random() * (max - min));
+                }
+                var sumWidth = $(window).width();
+                var loveArea = rmd(10, 20);
+                var scollWidth = rmd(10, sumWidth);
+
+                var scollHeight = $(window).height();
+                var timer = rmd(2000, 4000);
+                console.log(loveArea);
+                console.log(scollWidth);
+                /*  var top = Event.pageY;
+                  var left = Event.pageX;
+                  console.log(top + ':' + left);*/
+                $('body').append(div);
+                $('[style]:last').css('width', loveArea + 'px').css('height', loveArea + 'px');
+                $('[style]:last').css('left', scollWidth + 'px');
+
+                $('[style]:last').animate({
+                    top: scollHeight
+                }, timer, function () {
+                    var top = $('[style]:first').css('top');
+                    var bottom = (scollHeight - 100) + 'px';
+                    console.log(bottom);
+                    console.log(top);
+                    if (top > bottom) {
+
+                        $('[style]:first').remove('[style]:first');
+
+                        Love();
+
+
+                    }
+                });
+                /* $('[style]').css('top', top + 'px').css('left', left + 'px');*/
+
+            }
+
+            function allLove() {
+                for (var i = 0; i < 30; i++) {
+                    Love();
+                }
+
+            }
+            allLove();
+
+
+        })
+    </script>
+</head>
+
+<body>
+    <span>I LOVE YOU</span>
+
+</body>
+
+</html>

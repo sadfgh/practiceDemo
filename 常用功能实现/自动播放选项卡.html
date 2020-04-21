@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>自动播放选项卡</title>
+    <style type="text/css">
+        div {
+            width: 300px;
+            height: 150px;
+            border: 1px solid black;
+            display: none;
+        }
+        
+        .red {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="javascript:;">←</a>
+    <input type="button" value="aaaa" class="red">
+    <input type="button" value="bbbb">
+    <input type="button" value="cccc">
+    <a href="javascript:;">→</a>
+
+    <div style="display:block;">aaaa</div>
+    <div>bbbb</div>
+    <div>cccc</div>
+
+    <script>
+        var input = document.getElementsByTagName('input');
+        var div = document.getElementsByTagName('div');
+        var a1 = document.getElementsByTagName('a')[0];
+        var a2 = document.getElementsByTagName('a')[1];
+        var n = 0; //记录位置
+        var dinshiqi = null;
+
+
+
+        //清除定时器
+        function clear() {
+            clearInterval(dinshiqi);
+        }
+        //打开定时器
+        function open() {
+            clearInterval(dinshiqi);
+            dinshiqi = setInterval(function () {
+                xiayige();
+            }, 1000);
+        }
+        //清除原来属性，添加新属性。
+        function gonggonbufen() {
+            for (var i = 0; i < input.length; i++) {
+                input[i].className = '';
+                div[i].style.display = 'none';
+            }
+
+            input[n].className = 'red';
+            div[n].style.display = 'block';
+        }
+
+        function xiayige() {
+
+            n++;
+            if (n == input.length) {
+                n = 0;
+            }
+            gonggonbufen();
+        };
+
+
+
+
+
+
+        for (var i = 0; i < input.length; i++) {
+            input[i].onmouseover = clear;
+            div[i].onmouseover = clear;
+            input[i].onmouseout = open;
+            div[i].onmouseout = open;
+            input[i].num = i; //记录i;
+            input[i].onclick = function () {
+                for (var i = 0; i < input.length; i++) {
+                    input[i].className = '';
+                    div[i].style.display = 'none';
+                }
+                n = this.num;
+                this.className = 'red';
+                div[this.num].style.display = 'block';
+            }
+        }
+
+
+        a1.onmouseover = clear;
+        a2.onmouseover = clear;
+        a1.onmouseout = open;
+
+        a2.onmouseout = open;
+
+
+
+        a2.onclick = xiayige;
+        a1.onclick = function () {
+
+            n--;
+            if (n == -1) {
+                n = input.length - 1;
+            }
+            gonggonbufen();
+        }
+        open();
+    </script>
+</body>
+
+</html>

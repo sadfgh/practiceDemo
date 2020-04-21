@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>计算器</title>
+    <link rel="stylesheet" href="css/calculator.css">
+
+</head>
+
+<body>
+    <div id="calcu">
+        <div class="calcu-top">
+            <input type="text" value="0" class="content" id="content" disabled="disabled">
+        </div>
+        <div class="calcu-bottom">
+            <table>
+                <tr>
+                    <td>
+                        <button class="font-color" onclick="clickAC()">AC</button>
+                    </td>
+                    <td>
+                        <button onclick="clickBack()">←</button>
+                    </td>
+                    <td>
+                        <button onclick="per()">%</button>
+                    </td>
+                    <td>
+                        <button onclick="showSign('÷')">÷</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button onclick="showNumber('7')">7</button>
+                    </td>
+                    <td>
+                        <button onclick="showNumber('8')">8</button>
+                    </td>
+                    <td>
+                        <button onclick="showNumber('9')">9</button>
+                    </td>
+                    <td>
+                        <button onclick="showSign('×')">×</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button onclick="showNumber('4')">4</button>
+                    </td>
+                    <td>
+                        <button onclick="showNumber('5')">5</button>
+                    </td>
+                    <td>
+                        <button onclick="showNumber('6')">6</button>
+                    </td>
+                    <td>
+                        <button onclick="showSign('-')">-</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button onclick="showNumber('1')">1</button>
+                    </td>
+                    <td>
+                        <button onclick="showNumber('2')">2</button>
+                    </td>
+                    <td>
+                        <button onclick="showNumber('3')">3</button>
+                    </td>
+                    <td>
+                        <button onclick="showSign('+')">＋</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <button onclick="showNumber('0')">0</button>
+                    </td>
+                    <td>
+                        <button onclick="radixPoint()">.</button>
+                    </td>
+                    <td>
+                        <button style="background-color:red;" onclick="showEquel()">＝</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="js/calcu.js"></script>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		.box{
+			width: 350px;
+			height: 350px;
+			border: 1px solid red;
+		}
+		p{
+			width: 200px;
+			display: -webkit-box;
+			-webkit-box-orient:vertical;
+			-webkit-line-clamp:3;
+			word-break: break-all;
+			overflow: hidden;
+		}
+	</style>
+</head>
+<body>
+	<div class="box" id="box">
+	</div>
+	<p>大家好，我的名字叫马光豪，我来自广东茂名，我今年23岁了，感觉好迷茫，不知道自己能干什么。</p>
+	<script type="text/javascript">
+		var x = document.getElementById('box');
+
+		function geLocation(){
+			//判断是否能获取当前位置
+			if (navigator.geolocation) {
+				//getCurrentPosition() 获取当前的位置
+				//showPosition:成功调用的函数
+				//showError:失败调用的函数
+				//{}:调整当前获取地理信息的方式（可选）
+				navigator.geolocation.getCurrentPosition(showPosition,showError,{});
+			}else{
+				x.innerHTML = 'Geolocation is not supported by this browser.';
+			}
+		}
+		function showPosition(position){
+			x.innerHTML = 'Latitude:'+ position.coords.latitude + '<br/>Longitude:' + position.coords.longitude;
+		}
+		function showError(error){
+			x.innerHTML = '获取出现错误';
+		}
+		geLocation();
+	</script>
+</body>
+</html>

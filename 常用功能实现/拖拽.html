@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>拖拽</title>
+    <style type="text/css">
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    1、毕业综合实践报告一律用国际标准A4型纸(297mm×210mm)打印。页边距为：上边距20mm，下边距20mm，左边距20mm，右边距15mm。 2、文字图形一律从左至右横写横排。文字一律通栏编辑，使用规范的简化汉字。除非必要，不使用繁体字。忌用异体字、复合字及其他不规范的汉字。 3、综合实践报告各部分的编排式样及字体字号： （1）目录：项目名称用3号黑体，顶部居中；内容用小4号仿宋。 （2）内容提要及关键词：标题3号黑体，顶部居中，上下各空一行；内容用5号宋体，每段起首空两格，回行顶格。关键词三个字用4号黑体，内容用5号黑体；关键词通常不超过5个，词间空一格。 （3）正文文字：另起页，综合实践报告标题用3号黑体，顶部居中排列，上下各空一行；正文文字一般用小4号宋体，每段起首空两格，回行顶格，1.5倍行距。 （4）正文文中标题： 一级标题，标题序号为“一、”，4号黑体，独占行，末尾不加标点； 二级标题，标题序号为“㈠”，与正文字体字号相同，独占行，末尾不加标点； 三级以下标题，三、四、五级标题序号分别为“1、”、“(1)”和“①”，与正文字体字号相同，可根据标题的长短确定是否独占行。若独占行，则末尾不使用标点，否则，标题后必须加句号。每级标题的下一级标题应各自连续编号。 （5）注释：项目名称用4号黑体。正文中加注之处右上角加数码，形式为“①”或“(1)”， 注文按序号统一放到正文后排印，字体用5号宋体。引用著作时，注文的顺序为：作者、书名、出版单位、出版时间、页码，中间用逗号分隔；引用文章时，注文的顺序为：作者、文章标题、刊物名、期数，中间用逗号分隔。 （6）参考文献：项目名称用4号黑体，在正文或注释后排印，字体用5号宋体，参考文献内容，具体编排方式同注释。 4、全文排印连续页码，单面印时页码位于右下角。
+    <script>
+        var div = document.getElementsByTagName('div')[0];
+        div.onmousedown = function (ev) {
+            var ovenet = ev || Event;
+            var w = ovenet.clientX - div.offsetLeft;
+            var h = ovenet.clientY - div.offsetTop;
+            /*var newDiv = document.createElement('div');
+            newDiv.style.width = '100px';
+            newDiv.style.height = '100px';
+            newDiv.style.backgroundColor = 'red';
+            newDiv.style.position = 'absolute';
+            newDiv.style.display = 'none';*/
+            var newDiv = div.cloneNode(true);
+            newDiv.style.opacity = '0.5';
+            newDiv.style.display = 'none';
+            document.body.appendChild(newDiv);
+
+            document.onmousemove = function (ev) {
+                var ovenet = ev || Event;
+                var moveW = ovenet.clientX - w;
+                var moveH = ovenet.clientY - h;
+                if (moveW < 50) {
+                    moveW = 0;
+
+                } else if (moveH < 50) {
+                    moveH = 0;
+                } else if (moveW > document.documentElement.clientWidth - div.offsetWidth - 50) {
+                    moveW = document.documentElement.clientWidth - div.offsetWidth;
+
+                } else if (moveH > document.documentElement.clientHeight - div.offsetHeight - 50) {
+                    moveH = document.documentElement.clientHeight - div.offsetHeight;
+                }
+
+                newDiv.style.display = 'block';
+                newDiv.style.top = moveH + 'px';
+                newDiv.style.left = moveW + 'px';
+
+
+            };
+            document.onmouseup = function () {
+                div.style.top = newDiv.offsetTop + 'px';
+                div.style.left = newDiv.offsetLeft + 'px';
+                div.parentElement.removeChild(newDiv);
+                document.onmousemove = null;
+                div.onmouseup = null;
+            };
+            return false;
+        }
+    </script>
+</body>
+
+</html>

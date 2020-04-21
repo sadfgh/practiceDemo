@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5拖放</title>
+    <style type="text/css">
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        div{
+            width: 300px;
+            height: 150px;
+            border: 1px solid black;
+            float: left;
+            margin-left: 50px;
+        }
+        div ul li{
+            width: 100%;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            list-style:none;
+             
+            margin-top: 5px;
+            background-color: azure;
+            cursor: pointer;
+            
+        }
+    </style>
+</head>
+<body>
+    <div id="box" >
+        <ul id="con1">
+            <li>东</li>
+            <li>南</li>
+            <li>西</li>
+            <li>北</li>
+        </ul>
+    </div>
+    <div id="bagbox">
+        <ul id="con"></ul>
+    </div>
+    <script>
+        var box = document.getElementById('box');
+        var bagbox = document.getElementById('bagbox');
+        var ul1 =document.getElementById('con1');
+        var ul =document.getElementById('con');
+        var lis = document.getElementsByTagName('li');
+        for(var i = 0;i<lis.length;i++){
+          
+            lis[i].draggable = true;
+            lis[i].flag = false;
+            lis[i].ondragstart = function(e){
+               e.dataTransfer.setData("Text","Head ");
+                this.flag=true;
+            }
+            lis[i].ondragend = function(){
+                this.flag = false;
+            }
+        }
+        bagbox.ondragenter = function(e){
+            e.preventDefault();
+        }
+        bagbox.ondragover = function(e){
+            e.preventDefault();
+        }
+        bagbox.ondragleave = function(e){
+            e.preventDefault();
+        }
+        bagbox.ondrop = function(e){
+            for(var i = 0;i<lis.length;i++){
+                if(lis[i].flag){
+                    
+                    ul.appendChild(lis[i]);
+                }
+            }
+            e.preventDefault();
+        }
+        box.ondragenter = function(e){
+            e.preventDefault();
+        }
+        box.ondragover = function(e){
+            e.preventDefault();
+        }
+        box.ondragleave = function(e){
+            e.preventDefault();
+        }
+         box.ondrop = function(e){
+            for(var i = 0;i<lis.length;i++){
+                if(lis[i].flag){
+                    
+                    ul1.appendChild(lis[i]);
+                }
+            }
+            e.preventDefault();
+        }
+      
+    </script>
+</body>
+</html>

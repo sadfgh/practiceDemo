@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>图片延迟加载</title>
+    <style type="text/css">
+        li {
+            float: left;
+            list-style: none;
+        }
+        
+        img {
+            width: 400px;
+            height: 300px;
+        }
+    </style>
+    <script>
+        function getTop(obj) {
+            var top = 0;
+            while (obj) {
+
+                top += obj.offsetTop;
+                obj = obj.offsetParent;
+            }
+            return top;
+        }
+
+        window.onload = window.onresize = window.onscroll = function () {
+            var img = document.getElementsByTagName('img');
+            var st = document.documentElement.scrollTop || document.body.scrollTop;
+            var ch = document.documentElement.clientHeight;
+            for (var i = 0; i < img.length; i++) {
+                if (getTop(img[i]) < st + ch) {
+                    img[i].src = img[i].getAttribute('_src');
+                }
+
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <ul>
+        <li><img src="" alt="" _src='huge.jpg'></li>
+        <li><img src="" alt="" _src='huge.jpg'></li>
+        <li><img src="" alt="" _src='huge.jpg'></li>
+        <li><img src="" alt="" _src='huge.jpg'></li>
+        <li><img src="" alt="" _src='huge.jpg'></li>
+        <li><img src="" alt="" _src='huge.jpg'></li>
+        <li><img src="" alt="" _src='huge.jpg'></li>
+        <li><img src="" alt="" _src='huge.jpg'></li>
+        <li><img src="" alt="" _src='huge.jpg'></li>
+        <li><img src="" alt="" _src='huge.jpg'></li>
+        <li><img src="" alt="" _src='huge.jpg'></li>
+        <li><img src="" alt="" _src='huge.jpg'></li>
+        <li><img src="" alt="" _src='huge.jpg'></li>
+        <li><img src="" alt="" _src='huge.jpg'></li>
+        <li><img src="" alt="" _src='huge.jpg'></li>
+        <li><img src="" alt="" _src='huge.jpg'></li>
+        <li><img src="" alt="" _src='huge.jpg'></li>
+        <li><img src="" alt="" _src='huge.jpg'></li>
+    </ul>
+
+</body>
+
+
+</html>

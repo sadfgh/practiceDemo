@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>手风琴效果的实现</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        ul {
+            width: 400px;
+            height: 150px;
+            border: 1px solid black;
+            float: left;
+        }
+        
+        li {
+            width: 20px;
+            height: 150px;
+            list-style: none;
+            float: left;
+        }
+        
+        span {
+            width: 20px;
+            height: 150px;
+            display: block;
+            background-color: antiquewhite;
+            text-align: center;
+            line-height: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <ul>
+        <li>
+            <span>第五卷</span>
+
+        </li>
+        <li>
+            <span>第四卷</span>
+        </li>
+        <li>
+            <span>第三卷</span>
+        </li>
+        <li>
+            <span>第二卷</span>
+        </li>
+        <li>
+            <span>第一卷</span>
+        </li>
+    </ul>
+    <script>
+        var ul = document.getElementsByTagName('ul')[0];
+        var li = ul.children;
+        var span = document.getElementsByTagName('span');
+        li[0].onclick = function () {
+
+        }
+        for (var i = 0; i < li.length; i++) {
+            (function (index) {
+                li[index].onclick = function () {
+                    console.log(index);
+                    /* for (var i = 0; i < li.length; i++) {
+                         li[i].style.overflow = 'hidden';
+                     }*/
+                    this.style.width = 320 + 20 * index + 'px';
+                    this.style.left = 20 + 20 * index + 'px';
+                    this.style.position = 'absolute';
+                    this.style.backgroundColor = 'red';
+                    span[index].style.left = 320 + 20 * index + 'px';
+                    span[index].style.position = 'absolute';
+
+                }
+            })(i);
+
+        }
+    </script>
+</body>
+
+</html>

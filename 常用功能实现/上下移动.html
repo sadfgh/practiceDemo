@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>上下移动</title>
+</head>
+
+<body>
+    <ul>
+        <li>1
+            <span>习近平会见全国教育系统先进集体和先进个人代表</span>
+            <a href="javascript:;">上移</a>
+            <a href="javascript:;">下移</a>
+        </li>
+        <li>2
+            <span>广东中秋期间高速不免费 9月12日下午或现出行高峰</span>
+            <a href="javascript:;">上移</a>
+            <a href="javascript:;">下移</a>
+        </li>
+        <li>3
+            <span>中山一小伙和女友吵架 一气之下拔刀刺向自己进ICU</span>
+            <a href="javascript:;">上移</a>
+            <a href="javascript:;">下移</a>
+        </li>
+        <li>4
+            <span>广州地铁部分线路可刷脸过闸 安检支付一次性完成</span>
+            <a href="javascript:;">上移</a>
+            <a href="javascript:;">下移</a>
+        </li>
+    </ul>
+    <script>
+        var a = document.getElementsByTagName('a');
+        var ul = document.getElementsByTagName('ul')[0];
+        var dingshiqi = null;
+
+        function xiayi() {
+
+            var endLi = ul.children[a.length / 2 - 1];
+
+
+            var newLi = this.parentNode;
+            if (newLi == endLi) {
+                alert('到底啦');
+
+            }
+            var festOne = newLi.nextElementSibling || newLi.nextSibling;
+            var festTwo = festOne.nextElementSibling || festOne.nextSibling;
+            ul.insertBefore(newLi, festTwo);
+
+        }
+
+        function shangyi() {
+            var newLi = this.parentNode;
+            var firstLi = ul.children[0];
+
+            if (firstLi == newLi) {
+                alert('到顶啦');
+            }
+            var beforeLi = newLi.previousElementSibling || newLi.previousSibling;
+            ul.insertBefore(newLi, beforeLi);
+
+        }
+
+        for (var i = 0; i < a.length; i++) {
+            if (i % 2 == 0) {
+                a[i].onclick = shangyi;
+            } else {
+
+                a[i].onclick = xiayi;
+            }
+        }
+    </script>
+</body>
+
+</html>

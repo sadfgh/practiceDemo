@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgba(125, 125,125, .2);
+        }
+       .box{
+           /* width: 300px;
+           height: 450px; */
+           margin: 0 auto;
+       }
+       .heard{
+           position: relative;
+           width: 200px;
+           height: 100px;
+           margin: 10px auto;
+           background-color: hsl(120, 100%, 70%);
+           border-top-left-radius: 100px;
+           border-top-right-radius: 100px;
+           box-shadow: 1px 1px hsl(120, 100%, 72%),
+           2px 2px hsl(120, 100%, 74%),
+           3px 3px hsl(120, 100%, 76%),
+           4px 4px hsl(120, 100%, 78%),
+           5px 5px hsl(120, 100%, 80%),
+           6px 6px hsl(120, 100%, 82%),
+           7px 7px hsl(120, 100%, 84%);
+       }
+       .heard:before{
+           content: '';
+           position: absolute;
+           bottom: 30px;
+           left: 50px;
+           width: 20px;
+           height: 20px;
+           background-color: #fff;
+           border-radius: 50%;
+       }
+       .heard:after{
+           content: '';
+           position: absolute;
+           bottom: 30px;
+           right: 50px;
+           width: 20px;
+           height: 20px;
+           background-color: #fff;
+           border-radius: 50%;
+       }
+
+       .center{
+           position: relative;
+           width: 200px;
+           height: 200px;
+           margin: 0 auto;
+           background-color: hsl(120, 100%, 70%);
+           border-radius: 0 0 20px 20px;
+           box-shadow: 1px 1px hsl(120, 100%, 72%),
+           2px 2px hsl(120, 100%, 74%),
+           3px 3px hsl(120, 100%, 76%),
+           4px 4px hsl(120, 100%, 78%),
+           5px 5px hsl(120, 100%, 80%),
+           6px 6px hsl(120, 100%, 82%),
+           7px 7px hsl(120, 100%, 84%);
+       }
+       .center:before{
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: -40px;
+            width: 30px;
+            height: 150px;
+            background-color: hsl(120, 100%, 70%);
+            border-radius:5px;
+            box-shadow: 1px 1px hsl(120, 100%, 72%),
+           2px 2px hsl(120, 100%, 74%),
+           3px 3px hsl(120, 100%, 76%),
+           4px 4px hsl(120, 100%, 78%),
+           5px 5px hsl(120, 100%, 80%),
+           6px 6px hsl(120, 100%, 82%),
+           7px 7px hsl(120, 100%, 84%);
+       }
+       .center:after{
+            content: '';
+            position: absolute;
+            top: 10px;
+            right: -40px;
+            width: 30px;
+            height: 150px;
+            background-color: hsl(120, 100%, 70%);
+            border-radius:5px;
+            box-shadow: 1px 1px hsl(120, 100%, 72%),
+           2px 2px hsl(120, 100%, 74%),
+           3px 3px hsl(120, 100%, 76%),
+           4px 4px hsl(120, 100%, 78%),
+           5px 5px hsl(120, 100%, 80%),
+           6px 6px hsl(120, 100%, 82%),
+           7px 7px hsl(120, 100%, 84%);
+       }
+       .footer{
+           position: relative;
+           width: 50px;
+           height: 120px;
+           margin: 0 auto;
+          
+       }
+       .footer:before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -30px;
+            width: 30px;
+            height: 120px;
+            background-color: hsl(120, 100%, 70%);
+            border-radius: 0 0 5px 5px;
+            box-shadow: 1px 1px hsl(120, 100%, 72%),
+           2px 2px hsl(120, 100%, 74%),
+           3px 3px hsl(120, 100%, 76%),
+           4px 4px hsl(120, 100%, 78%),
+           5px 5px hsl(120, 100%, 80%),
+           6px 6px hsl(120, 100%, 82%),
+           7px 7px hsl(120, 100%, 84%);
+       }
+       .footer:after{
+            content: '';
+            position: absolute;
+            top: 0;
+            right:-30px;
+            width: 30px;
+            height: 120px;
+            background-color: hsl(120, 100%, 70%);
+            border-radius: 0 0 5px 5px;
+            box-shadow: 1px 1px hsl(120, 100%, 72%),
+           2px 2px hsl(120, 100%, 74%),
+           3px 3px hsl(120, 100%, 76%),
+           4px 4px hsl(120, 100%, 78%),
+           5px 5px hsl(120, 100%, 80%),
+           6px 6px hsl(120, 100%, 82%),
+           7px 7px hsl(120, 100%, 84%);
+       }
+       .text{
+           text-align: center;
+           font-size: 100px;
+           color:hsl(135, 38%, 57%);
+           text-shadow: 0 0 10px hsl(90, 12%, 97%), 0 0 25px hsl(100, 100%, 50%);
+
+       }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="heard"></div>
+        <div class="center"></div>
+        <div class="footer"></div>
+        <div class="text">Android</div>
+    </div>
+</body>
+</html>

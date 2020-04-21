@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>加速减速运动</title>
+    <style type="text/css">
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div></div>
+    <script src="%E6%9C%80%E7%BB%88%E5%8A%A8%E7%94%BB%E5%BA%93%E5%B0%81%E8%A3%85.js"></script>
+    <script>
+        var div = document.getElementsByTagName('div')[0];
+        move(div, {
+            width: 500,
+            height: 500,
+            opacity: 0.6
+        }, {
+            duration: 2000
+        });
+    </script>
+</body>
+
+</html>

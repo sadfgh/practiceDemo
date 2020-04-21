@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>右键自定义菜单</title>
+    <style type="text/css">
+        ul {
+            position: absolute;
+            display: none;
+        }
+        
+        li {
+            width: 100px;
+            height: 30px;
+            margin: 2px;
+            list-style: none;
+            line-height: 30px;
+            text-align: center;
+            background-color: skyblue;
+        }
+        
+        li:hover {
+            /*  width: 100px;
+            height: 30px;
+            margin: 2px;
+            list-style: none;
+            line-height: 30px;
+            text-align: center;*/
+            background-color: royalblue;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>百度</li>
+        <li>新浪</li>
+        <li>刷新</li>
+    </ul>
+    <script>
+        var ul = document.getElementsByTagName('ul')[0];
+        var li = ul.children;
+        document.oncontextmenu = function (ev) {
+            var oevent = ev || Event;
+            ul.style.top = oevent.clientY + 'px';
+            ul.style.left = oevent.clientX + 'px';
+            ul.style.display = 'block';
+            return false;
+        }
+        document.onmouseup = function () {
+            ul.style.display = 'none';
+        }
+        li[0].onclick = function () {
+            window.open('http://www.baidu.com');
+        }
+        li[1].onclick = function () {
+            window.open('http://www.sina.com');
+        }
+        li[2].onclick = function () {
+            window.location.reload();
+        }
+    </script>
+</body>
+
+</html>

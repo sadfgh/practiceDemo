@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>运动库的封装</title>
+    <style type="text/css">
+        div {
+            width: 200px;
+            height: 30px;
+            background-color: red;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+
+    <script>
+        var div = document.getElementsByTagName('div')[0];
+        var timer = null;
+        //得到元素样式，返回样式的值
+        function getStyle(obj, name) {
+
+            return obj.currentStyle ? obj.currentStyle[name] : getComputedStyle(obj, false)[name];
+        }
+
+        //obj-要操作的元素 ， json - 要改变的样式 ， time-改变用的时间 ， fn - 回调函数
+        function move(obj, json, time, fn) {
+            //接收初始值
+            var start = {};
+            //接收实际值
+            var dis = {};
+            //遍历输入参数
+            for (var name in json) {
+                //得到初始值
+                start[name] = parseInt(getStyle(obj, name));
+                //得到实际值
+                dis[name] = json[name] - start[name];
+                console.log(start[name]);
+            }
+
+            //计算实际值所走总次数
+            var count = Math.round(time / 30);
+            //记录走的次数
+            var n = 0;
+            //运动前先清定时器，obj.timer设置每个元素间运动互不干扰。
+            clearInterval(obj.timer);
+            obj.timer = setInterval(function () {
+                //次数累加
+                n++;
+
+                //遍历实际参数
+                for (var name in dis) {
+                    //分析opacity，及其他情况。
+                    if (name == 'opacity') {
+                        //为opacity时
+                        obj.style[name] = start[name] + dis[name] * n / count;
+                    } else {
+                        //不为opacity时
+                        obj.style[name] = start[name] + dis[name] * n / count + 'px';
+
+                    }
+
+                }
+                //判断当累加次数等于实际值所走总数时。
+                if (n == count) {
+                    //清除定时器
+                    clearInterval(obj.timer);
+                    fn && fn();
+                }
+            }, 30);
+        }
+
+        div.onmouseover = function () {
+            move(div, {
+
+                width: 500,
+
+            }, 500, function () {
+                move(div, {
+                    height: 400
+                }, 500, function () {
+                    move(div, {
+
+                        opacity: 0.5,
+
+                    }, 500)
+                })
+            });
+        }
+        div.onmouseout = function () {
+            move(div, {
+                height: 30,
+
+
+            }, 500, function () {
+                move(div, {
+                    width: 200,
+
+                }, 500, function () {
+                    move(div, {
+
+                        opacity: 1,
+
+                    }, 500)
+                })
+            });
+        }
+    </script>
+</body>
+
+</html>

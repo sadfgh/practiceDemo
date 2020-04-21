@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        /* input{
+            border: 1px solid black;
+            text-align: right;
+            font-weight: bold;
+            font-size: 18px;
+        }*/
+    </style>
+</head>
+
+<body>
+
+    <span id="today"></span>
+    <!-- 分：<input type="text" value="0">
+    秒：<input type="text" value="0">-->
+    <script type="text/javascript">
+        /*2的n次方
+                                                                                                                       var n  = parseInt(window.prompt('input'));
+                                                                                                                       var sum=1;
+                                                                                                                       
+                                                                                                                       for(var i=0;i<n;i++){
+                                                                                                                            sum = 2*sum;
+                                                                                                                       }
+                                                                                                                       console.log(sum);*/
+        /*n的阶乘
+        var n = parseInt(window.prompt('请输入'));
+         var mul = 1;
+        for(var i=1;i<=n;i++){
+             mul = mul*i;
+        }
+        console.log(mul);*/
+        /* 比较三个数的大小
+        var a = parseInt(window.prompt('请输入第一个数'));
+         var b = parseInt(window.prompt('请输入第二个数'));
+         var c = parseInt(window.prompt('请输入第三个数'));
+         if(a>b){
+            if(a>c){
+                  console.log(a);
+            }else{
+                  console.log(c);
+            }
+         }else{
+            if(b>c){
+                console.log(b);
+            }else{
+              console.log(c);
+            }
+         }*/
+        /*求0~100间的素数
+        Math.sqrt()返回一个数如：Math.sqrt(100);返回10.
+        var cont=0;
+        for(var i=2;i<100;i++){
+             for(var j=1;j<=Math.sqrt(i);j++){
+                 if(i%j==0){
+                     cont++;
+                 }
+             }
+            if(cont==1){
+                 console.log(i+"");
+            }
+            cont=0;
+        }*/
+
+        /*递归实现n的阶乘
+        function mul(n){
+             if(n==1||n==0){
+                 return 1;
+             }
+            return n*mul(n-1);
+        }*/
+        /*    //递归实现斐波那数列
+           function fb(n){
+                if(n==1||n==2){
+                    return 1;
+                }
+               return fb(n-1)+fb(n-2);
+           }*/
+        /*  var minutesNode = document.getElementsByTagName('input')[0];
+            var secondsNode = document.getElementsByTagName('input')[1];
+            
+            var minutes=0,
+               seconds=0;
+             var timer = setInterval(function(){
+                 seconds++;
+                 if(seconds==60){
+                     seconds = 0;
+                     minutes++;
+                 }
+                 minutesNode.value = minutes;
+                 secondsNode.value = seconds;
+                if(minutes == 3){
+                     clearInterval(timer);
+                }
+            },100);*/
+
+        /*预编译
+        function fn(a){
+             console.log(a);
+            var a = 123;
+            console.log(a);
+            function a(){}
+            console.log(a);
+            var b = function(){}
+            console.log(b);
+            function d(){}
+        }
+        fn(1);
+        第一步：创建AO对象
+        AO{
+        }
+        第二部：找形参和变量声明，将变量和形参名作为AO属性名，值为undefined
+        AO{
+             a:undefined,
+             b:undefined
+        }
+        第三部：将实参值和形参值统一
+        AO{
+             a:1,
+             b:undefined
+        }
+        第四部：在函数体里面找函数声明，值赋予函数体
+        AO{
+             a:function a(){},
+             b:undefined,
+             d:function d(){}
+        }*/
+        /*闭包的运用 
+     
+        function test(){
+               var arr = [];
+             for(var i = 0;i<10;i++){
+                 (function(j){
+                   arr[j] = function(){
+                       document.write(j + " ");
+                   }
+                 }(i))
+             }
+             return arr;
+         }
+          
+          var myArr = test();
+          console.log(myArr);*/
+        /*for(var j = 0;j<10;j++){
+              myArr[j];
+        }*/
+
+        /*计算字节长度
+        var str = window.prompt('请输入一段字符串');
+           var sum = 0;
+           for(var i = 0;i<str.length;i++){
+               if(str.charCodeAt(i)>255){
+                    sum+=2;
+               }else{
+                    sum++;
+               }
+           }
+           console.log(sum);*/
+
+        //时间
+        /*function setDateTime() {
+		var date = new Date();
+		var day = date.getDay();
+		var week;
+		switch (day) {
+		case 0:
+			week = "星期日";
+			break;
+		case 1:
+			week = "星期一";
+			break;
+		case 2:
+			week = "星期二";
+			break;
+		case 3:
+			week = "星期三";
+			break;
+		case 4:
+			week = "星期四";
+			break;
+		case 5:
+			week = "星期五";
+			break;
+		case 6:
+			week = "星期六";
+			break;
+		}
+		var today = date.getFullYear() + "年" + (date.getMonth() + 1) + "月"
+				+ date.getDate() + "日  " + week + " " + date.getHours() + ":"
+				+ date.getMinutes() + ":" + date.getSeconds();
+		document.getElementById("today").innerHTML = today;
+	}
+	window.setInterval("setDateTime()", 1000);*/
+        //深度克隆
+        obj = {
+            name: 'fdoee',
+            age: 13,
+            happy: ['baskball', 'sing', 'football'],
+            dong: {
+                sex: 'male',
+                hibble: 'famale',
+                wife: ['xiaozhang', 'xiaoliu', 'xiaoqian']
+            }
+
+        };
+        obj1 = {};
+
+
+        function deepClone(origin, target) {
+            var target = target || {},
+                toStr = Object.prototype.toString,
+                arrStr = '[object Array]';
+            if (origin.hasOwnProperty) {
+                for (ele in origin) {
+                    if (typeof (origin[ele]) == 'object') {
+                        target[ele] = (toStr.call(origin[ele])) == arrStr ? [] : {};
+                        deepClone(origin[ele], target[ele]);
+                    } else {
+                        target[ele] = origin[ele];
+                    }
+                }
+            }
+            return target;
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

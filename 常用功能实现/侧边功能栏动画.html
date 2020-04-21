@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>jiathis效果的实现</title>
+    <style type="text/css">
+        div {
+            width: 30px;
+            height: 100px;
+            background-color: azure;
+            border: 1px solid black;
+            position: fixed;
+            right: 0;
+            top: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        var div = document.getElementsByTagName('div')[0];
+        var timer = null;
+        div.onmouseover = function () {
+            var origin = div.offsetWidth;
+            console.log(origin);
+            var distination = 100;
+            var range = 100 - origin;
+            var time = 1000;
+            var everyTime = Math.round(time / 30);
+            var n = 0;
+            clearInterval(timer);
+            timer = setInterval(function () {
+                n++;
+                div.style.width = origin + range * n / everyTime + 'px';
+                if (n == everyTime) {
+                    clearInterval(timer);
+                }
+            }, 30);
+
+
+        };
+        div.onmouseout = function () {
+            var origin = div.offsetWidth;
+            console.log(origin);
+            var distination = 30;
+            var range = 30 - origin;
+            var time = 1000;
+            var everyTime = Math.round(time / 30);
+            var n = 0;
+            clearInterval(timer);
+            timer = setInterval(function () {
+                n++;
+                div.style.width = origin + range * n / everyTime + 'px';
+                if (n == everyTime) {
+                    clearInterval(timer);
+                }
+            }, 30);
+
+
+        }
+    </script>
+</body>
+
+</html>

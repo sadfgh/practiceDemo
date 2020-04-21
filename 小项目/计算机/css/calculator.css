@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#calcu {
+    width: 300px;
+    height: 500px;
+    margin: auto;
+}
+
+#calcu .calcu-top {
+    width: 100%;
+    height: 160px;
+    background-color: rgb(245, 245, 245);
+    ;
+}
+
+#calcu .calcu-top .content {
+    width: 99%;
+    height: 50px;
+    text-align: right;
+    font-weight: 100;
+    font-family: fantasy;
+    font-size: 30px;
+    margin-top: 110px;
+    background-color: rgb(245, 245, 245);
+    border: none;
+}
+
+#calcu .calcu-bottom {
+    width: 100%;
+    height: 340px;
+}
+
+#calcu .calcu-bottom table {
+    width: 100%;
+    height: 100%;
+    border-spacing: 0px;
+}
+
+#calcu .calcu-bottom table tr td {
+    width: 25%;
+    height: 20%;
+    border: 1px solid rgb(250, 250, 250);
+}
+
+#calcu .calcu-bottom table tr td button {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    border: none;
+    font-size: 18px;
+}
+
+.font-color {
+    color: red;
+}

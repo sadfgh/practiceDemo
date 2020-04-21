@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        div{
+            float: left;
+            width: 200px;
+            height: 300px;
+            margin-right: 50px;
+            border: 1px solid black;
+        }
+        p{
+            width: 100%;
+            margin-bottom: 10px;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <p id="p1" draggable="true">我是一个p</p>
+        <p id="p2" draggable="true">我是第二个p</p>
+    </div>
+    <div class="box2"></div>
+    <div class="box2"></div>
+    <script>
+    
+        document.ondragstart = function(e) {
+           e.dataTransfer.setData('text/html',e.target.id);
+        }
+        document.ondrag = function(e) {
+           
+        }
+        document.ondragleave = function(e) {
+            
+        }
+        document.ondragend = function(e) {
+           
+        }
+
+        document.ondragenter = function(e){
+         
+         
+        }
+        document.ondragover = function(e){
+           e.preventDefault();
+           
+        }
+        document.ondrop = function(e){
+            console.log('ondrop');
+            var id = e.dataTransfer.getData('text/html');
+            var p = document.querySelector('#'+id);
+            console.log(p);
+           e.target.appendChild(p);
+        }
+
+
+
+
+
+    </script>
+</body>
+</html>

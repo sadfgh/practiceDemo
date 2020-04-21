@@ -1,0 +1,100 @@
+<!DOCTYPE html> 
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        body {
+            margin: 0 0;
+            padding: 0 0;
+            background: #f6f6f6;
+        }
+        
+        .top {
+            position: fixed;
+            width: 100%;
+            height: 50px;
+            background: #abc797;
+            top: 0;
+           
+        }
+        
+        a {
+            background: #abc797;
+            width: 60px;
+            height: 24px;
+            text-align: center;
+           
+            font-size: 30px;
+            color: #fff;
+            display: block;
+            opacity: .9;
+            padding: 8px 0;
+            line-height: 24px;
+            text-decoration: none;
+            border-bottom: solid 1px #eee;
+        }
+        
+        .ce {
+            border: solid 1px #eee;
+           
+            position: fixed;
+            z-index: 1997;
+            border-collapse: collapse;
+            width: 60px;
+            right: 10px;
+            top: 50%;
+            margin-top: -90px;
+        }
+        #top1,#top2,#top3,#top4{
+           padding-top: 50px;
+            width: 100%;
+            height: 350px;
+            font-size: 25px;
+        }
+        #top1{
+            background-color: pink;
+        }
+        #top2{
+            background-color: red;
+        }
+        #top3{
+            background-color: wheat;
+        }
+        #top4{
+            background-color: greenyellow;
+        }
+    </style>
+</head>
+
+<body>
+
+   
+    
+    <!--固定顶栏-->
+    <div class="top" id='top'>
+    </div>
+    <div style="height: 50px;">
+    </div>
+
+    <div id="top1">top1</div>
+    <div id="top2">top2</div>
+    <div id="top3">top3</div>
+    <div id="top4">top4</div>
+
+
+
+    <!--固定侧栏-->
+   
+    <div class="ce" id="ce">
+       <a href="#top1">top1</a>
+       <a href="#top2">top2</a>
+       <a href="#top3">top3</a>
+       <a href="#top4">top4</a>
+    </div>
+
+</body>
+
+
+</html>

@@ -1,0 +1,456 @@
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}
+.w{
+	width: 1190px;
+	margin: 0 auto;
+}
+/*推广广告*/
+/*start*/
+.popularize{
+	display: block;
+	height: 80px;
+	background-color: rgb(12, 128, 209);
+}
+.popularize-img{
+	position: relative;
+	height: 100%;
+	width: 990px;
+	margin: 0 auto;
+	background-image: url(../img/popul.webp);
+	background-position: center center;
+}
+
+@font-face{
+	font-family: 'icomoon';
+	src: url('../fonts/icomoon.eot?7kkyc2');
+	src: url('../fonts/icomoon.eot?7kkyc2#iefix') format('embedded-opentype'),
+		 url('../fonts/icomoon.ttf?7kkyc2') format('truetype'),
+		 url('../fonts/icomoon.woff?7kkyc2') format('woff'),
+		 url('../fonts/icomoon.svg?7kkyc2#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.popularize i{
+	position: absolute;
+	top: 5px;
+	right: 0;
+	width: 20px;
+	height: 20px;
+	text-align: center;
+	color: rgba(255,255,255,.5);
+	font-family: 'icomoon';
+	line-height: 20px;
+	background-color: rgba(0,0,0,.2);
+	font-size: 14px;
+}
+/*end*/
+
+
+
+/*上导航栏*/
+/*start*/
+
+.top-nav{
+	 height: 30px;
+     line-height: 30px;
+     background-color: #e3e4e5;
+
+}
+.top-nav li{
+	float: left;
+}
+.line{
+	width: 1px;
+	height: 14px;
+	margin: 9px 15px 0;
+	background-color: #999;
+}
+.fl i{	
+	color: #f10215;	
+}
+.fr i{
+	color: #999;
+}
+.fr i,
+.fl i{
+	width: 20px;
+	height: 20px;
+	text-align: center;
+	font-family: 'icomoon';
+	line-height: 20px;
+	font-size: 14px;
+}
+.font-color{
+	color: #f00 !important;
+}
+/*end*/
+
+
+/*头部*/
+/*start*/
+.header{
+	height: 140px;
+	background-color: #fff;
+}
+.header-content{
+	position: relative;
+}
+
+/*logo*/
+.logo{
+	position: absolute;
+	top: 10px;
+	width: 190px;
+	height: 120px;
+	
+}
+.logo a{
+	display: block;
+	width: 100%;
+	height: 120px;
+	text-indent: -999px;
+	overflow: hidden;
+	background-image: url("../img/logo.png");
+}
+
+/*搜索*/
+.search{
+	position: absolute;
+	top: 24px;
+	left: 240px;
+	width: 540px;
+	height: 31px;
+	border: 2px solid #e2231a;
+	
+}
+.search input{
+	width: 418px;
+	height: 30px;
+	padding-left: 10px;
+	border: 0;
+	outline: none;
+}
+.search .pho-img{
+	margin: 0 15px;
+	font-size: 16px;
+	color: #9f9f9f;
+	font-family: 'icomoon';
+}
+.search button{
+	width: 58px;
+	height: 31px;
+	text-align: center;
+	border: 0;
+	outline: none;
+    background-color: #e1251b;
+}
+
+.search .search-img{
+	font-size: 15px;
+	text-align: center;
+	color: #fff;
+	font-family: 'icomoon';
+}
+
+
+/*热词*/
+.hot-content{
+	position: absolute;
+	top: 65px;
+	left: 240px;
+	width: 450px;
+	height: 20px;
+	line-height: 20px;
+}
+.hot-content a{
+	margin-right: 5px;
+}
+
+/*下导航栏*/
+.bottom-nav{
+	position: absolute;
+	top: 90px;
+	left: 190px;
+	width: 750px;
+	height: 40px;
+	line-height: 50px;
+	
+}
+.bottom-nav li{
+	float: left;
+	margin: 0 11px;
+}
+.bottom-nav a{
+	font-size: 15px;
+	color: #333;
+}
+.bottom-nav a:hover{
+	font-size: 15px;
+	color: #e33333;
+}
+
+
+/*购物车*/
+.shopping{
+	position: absolute;
+	top: 24px;
+	right: 250px;
+	width:132px;
+	height: 36px;
+	line-height: 36px;
+	text-align: center;
+	border: 1px solid #e3e4e5;
+}
+.shopping .car-img{
+	color: #e1251b;
+	margin-right: 15px;
+	font-family: 'icomoon';
+}
+.shopping .count{
+	position: absolute;
+	top: 0;
+	left: 28px;
+	font-size: 12px;
+	height: 15px;
+	color: #fff;
+	line-height: 15px;
+	padding: 0 6px;
+	border-radius: 7px;
+	background-color: #e1251b;
+}
+
+
+/*右推广*/
+.right-popularize{
+	position: absolute;
+	top: 10px;
+	right: 0;
+	width: 190px;
+	height: 120px;
+	
+}
+.right-popularize a{
+	display: block;
+	width: 190px;
+	height: 120px;
+	background-image: url("../img/r-popul.gif");
+}
+/*end*/
+
+
+/*底部*/
+/*start*/
+/*服务*/
+.footer-service{
+	height: 42px;
+	padding: 30px 0;
+    border-bottom: 1px solid #dedede;
+   
+}
+.footer-service ul{
+	height: 42px;
+	line-height: 42px;
+	
+}
+.footer-service li,
+				h3,
+				 p{
+					float: left;
+}
+.footer-service li{
+	margin: 0 30px;
+}
+.footer-service h3{
+	width: 36px;
+	height: 42px;
+	margin: 0 10px;
+	text-indent: -999px;
+	overflow: hidden;
+	background-image: url("../img/jinglingtubiao.png");
+	
+}
+.footer-service p{
+	overflow: hidden;
+	width: 180px;
+	font-size: 18px;
+    font-weight: 700;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #444;
+}
+
+.footer-service .footer-service-duo{
+	background-position: 0px 42px;
+}
+.footer-service .footer-service-kuai{
+	background-position:-41px 42px;
+}
+.footer-service .footer-service-hao{
+	background-position: -82px 42px;
+}
+.footer-service .footer-service-sheng{
+	background-position: -123px 42px;
+}
+
+
+/*帮助*/
+.footer-help{
+	height: 160px;
+	margin: 20px 0;
+}
+
+.footer-help .foooter-help-conent{
+	float: left;
+	width: 195px;
+	
+}
+.footer-help h5{
+	margin: 6px 0;
+	font-size: 15px;
+}
+.footer-help li{
+	margin: 3px 0;
+}
+
+.footer-help .foooter-help-area{
+	float: right;
+    width: 200px;
+    height: 150px;
+    background-image: url("../img/jinglingtubiao.png");
+}
+.foooter-help-area h5{
+	text-align: center;
+}
+.foooter-help-area p{
+	width: 180px;
+	padding: 0 10px;
+}
+.foooter-help-area a{
+	position: relative;
+	display: block;
+	height: 16px;
+	line-height: 16px;
+	float: right;
+	text-align: center;
+}
+
+.foooter-help-area i{
+	position: absolute;
+	top: 0;
+	right: -11px;
+	display: inline-block;
+	height: 16px;
+	line-height: 18px;
+	color: #999;
+	font-family: 'icomoon';
+}
+
+
+/*版权*/
+.footer-copyright{
+	padding: 15px 0;
+	width: 100%;
+    border-top: 1px solid #e1e1e1;
+    text-align: center; 
+}
+.footer-copyright .footer-company-inner{
+	width: 100%;
+	margin: 10px 0;
+	
+}
+.footer-company-inner a{
+	color: #404040;
+}
+.footer-company-inner a:hover{
+	color: #e33333;
+}
+.footer-copyright .footer-copuright-inner{
+	width: 100%;
+	
+  
+}
+.footer-copuright-inner .footer-copuright-conent{
+	width: 100%;
+	height: 100px;
+  
+}
+.footer-copuright-conent p{
+	width: 100%;
+	margin: 3px 0;
+}
+.footer-copuright-inner .footer-nation-language{
+	width: 100%;
+	margin: 3px 0;
+}
+.footer-nation-language .language-alike-icon{
+	display: inline-block;
+	width: 15px;
+    height: 12px;
+    margin-right: 5px;
+    background-image: url("../img/jinglingtubiao.png");
+}
+.language-one{
+	background-position: -108px -155px;
+}
+.language-two{
+	background-position: -128px -153px;
+}
+.language-three{
+	background-position: -148px -152px;
+}
+.language-four{
+	background-position: -168px -154px;
+}
+.language-five{
+	background-position: -108px -170px;
+}
+
+.footer-copuright-inner .footer-branch-company{
+	width: 100%;
+	margin: 3px 0;
+	
+	}
+.footer-copyright .footer-gain-brand{
+	width: 100%;
+	margin: 20px 0;
+	
+}
+.footer-gain-brand a{
+	display: inline-block;
+    margin: 0 3px;
+    width: 103px;
+    height: 32px;
+    background-image: url("../img/jinglingtubiao.png");
+  }  
+.brand-icon-one{
+	background-position: -205px -111px;
+
+}
+.brand-icon-two{
+	background-position:-205px -72px;
+
+}
+.brand-icon-three{
+	background-position: -205px -34px;
+
+}
+.brand-icon-four{
+	background-position: -205px 1px;
+
+}
+.brand-icon-five{
+	background-position: -307px -153px;
+
+}
+ 
+.footer-copyright span{
+	display: inline-block;
+	margin: 0 5px;
+	color: #666;
+}
+/*end*/

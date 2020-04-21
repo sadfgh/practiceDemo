@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style type="text/css">
+    div {
+		width:560px;
+		height:220px;
+		border:1px solid red;
+		}
+		div img{
+		width:520px;
+		height:220px;
+		border:1px solid red;
+		position:absolute;
+		}
+		div ul{
+			position:relative;
+		 float:right;
+		}
+		div ul li{
+			list-style:none;
+			border:1px solid red;
+			width:20px;
+			height:20px;
+			line-height:20px;
+			margin-top:8px;
+			margin-right:10px;
+			text-align:center;
+			}
+</style>
+<script type="text/javascript">
+window.onload=init;
+var i=0;
+var lunbo;
+function init(){
+	 var x = document.getElementById("li0");
+			   x.style.background="orange";
+	 lunbo=window.setInterval("fn()",1000);
+	}
+	function fn(){
+		
+		i++;
+		if(i>5){
+			i=0;
+			}
+		var img = document.getElementById("d1");
+		img.src=i+".jpg";
+		qcys();
+		 var ys = document.getElementById("li"+i);
+		  ys.style.background="orange";
+		}
+		function stop(){
+			window.clearInterval(lunbo);
+			
+			}
+	   function start(){
+		   lunbo=window.setInterval("fn()",1000);
+		   }
+		   function ting(n,m){
+			   i=n;
+			   var img=document.getElementById("d1");
+			   img.src=n+".jpg";
+			  qcys();
+			   
+			   window.clearInterval(lunbo);
+			   m.style.background="orange";
+			  
+			   }
+			   function dong(){
+				   lunbo=window.setInterval("fn()",1000);
+				   
+				   }
+				   function qcys(){
+					    for(j=0;j<6;j++){
+				    var x = document.getElementById("li"+j);
+			           x.style.background="white";
+				   }
+					   }
+</script>
+</head>
+
+<body>
+    <div>
+     <img src="0.jpg" id="d1" onmouseover="stop()" onmouseout="start()">
+     <ul>
+        <li id="li0" onmouseover="ting(0,this)" onmouseout="dong()">1</li>
+        <li id="li1" onmouseover="ting(1,this)" onmouseout="dong()">2</li>
+        <li id="li2" onmouseover="ting(2,this)" onmouseout="dong()">3</li>
+        <li id="li3" onmouseover="ting(3,this)" onmouseout="dong()">4</li>
+        <li id="li4" onmouseover="ting(4,this)" onmouseout="dong()">5</li>
+        <li id="li5" onmouseover="ting(5,this)" onmouseout="dong()">6</li>
+     </ul>
+   </div>
+</body>
+</html>
